@@ -1,5 +1,5 @@
 # photos
-Project made By Rayaan Afzal and Junaid Ghani
+Project made By Junaid Ghani and Rayaan Afzal
 
 A photos app created using JavaFX Library for CS213
 
