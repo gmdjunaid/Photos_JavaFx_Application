@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.controller.PhotosController">
+    <children>
+        <SplitPane dividerPositions="0.2505567928730512, 0.7494432071269488" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <items>
+                <AnchorPane prefHeight="592.0" prefWidth="177.0">
+                    <children>
+                        <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Master" textAlignment="CENTER" wrapText="false">
+                            <font>
+                                <Font size="18.0" fx:id="x1" />
+                            </font>
+                            <textFill>
+                                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+                            </textFill>
+                        </Label>
+                        <Button fx:id="addPhoto" layoutX="56.0" layoutY="56.0" mnemonicParsing="false" onAction="#addPhoto" prefHeight="26.0" prefWidth="76.0" text="Add Photo" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="48.0" />
+                        <Button fx:id="deletePhoto" layoutX="56.0" layoutY="90.0" mnemonicParsing="false" onAction="#removePhoto" prefHeight="26.0" prefWidth="76.0" text="Delete" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="48.0" />
+                        <Button fx:id="captionPhotoBtn" layoutX="56.0" layoutY="125.0" mnemonicParsing="false" onAction="#captionPhoto" prefHeight="26.0" prefWidth="114.0" text="Re/Caption" AnchorPane.leftAnchor="56.0" AnchorPane.rightAnchor="48.0" />
+                        <Button fx:id="logOutBtn" layoutX="82.0" layoutY="490.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
+                        <Label fx:id="userLabel" layoutX="64.0" layoutY="458.0" text="Logged in as User" />
+                        <Button fx:id="backButton" layoutX="82.0" layoutY="523.0" mnemonicParsing="false" onAction="#savePhotoInfo" prefHeight="25.0" prefWidth="59.0" text="Back" />
+                        <Button fx:id="copyToBtn" layoutX="57.0" layoutY="162.0" mnemonicParsing="false" onAction="#copyPhotoToAlbum" prefHeight="25.0" prefWidth="114.0" text="Copy To" />
+                        <Button fx:id="moveToBtn" layoutX="57.0" layoutY="198.0" mnemonicParsing="false" onAction="#movePhotoToAlbum" prefHeight="25.0" prefWidth="114.0" text="Move To" />
+                        <Button fx:id="photoSeqBtn" layoutX="68.0" layoutY="296.0" mnemonicParsing="false" onAction="#handlePhotoSequence" prefHeight="58.0" prefWidth="87.0" text="Start Photo Sequence" textAlignment="CENTER" wrapText="true" />
+                  <Button fx:id="mngTagBtn" layoutX="58.0" layoutY="234.0" mnemonicParsing="false" onAction="#managePhotoTags" prefHeight="26.0" prefWidth="114.0" text="Manage Tags" />
+                  <Label fx:id="currentAlbumLabel" layoutX="71.0" layoutY="404.0" prefHeight="40.0" prefWidth="81.0" text="Current Album:" textAlignment="CENTER" wrapText="true" />
+                    </children>
+                </AnchorPane>
+                <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+                    <content>
+                        <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+                            <children>
+                                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Photos" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <ScrollPane layoutX="-4.0" layoutY="41.0" prefHeight="545.0" prefWidth="449.0" AnchorPane.bottomAnchor="-41.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="-15.0" AnchorPane.topAnchor="41.0">
+                           <content>
+                                      <TilePane fx:id="photosPane" prefHeight="529.0" prefWidth="428.0" />
+                           </content>
+                        </ScrollPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+                <AnchorPane prefHeight="592.0" prefWidth="291.0">
+                    <children>
+                        <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                        <Label fx:id="photoDateLabel" layoutX="32.0" layoutY="412.0" prefHeight="73.0" prefWidth="167.0" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font size="21.0" />
+                            </font></Label>
+                        <Label fx:id="photoTagsLabel" layoutX="9.0" layoutY="512.0" prefHeight="73.0" prefWidth="206.0" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font size="18.0" />
+                            </font></Label>
+                        <Label fx:id="photoCaptionLabel" layoutX="6.0" layoutY="272.0" prefHeight="113.0" prefWidth="212.0" textAlignment="CENTER" wrapText="true">
+                            <font>
+                                <Font size="21.0" />
+                            </font>
+                        </Label>
+                        <ImageView fx:id="largePhotoView" fitHeight="200.0" fitWidth="200.0" layoutX="15.0" layoutY="41.0" preserveRatio="true" />
+                  <Label layoutX="70.0" layoutY="241.0" prefHeight="31.0" prefWidth="87.0" text="Caption:">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="87.0" layoutY="385.0" prefHeight="31.0" prefWidth="54.0" text="Date:" textAlignment="CENTER" wrapText="true">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="92.0" layoutY="485.0" text="Tags:">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                    </children>
+                </AnchorPane>
+            </items>
+        </SplitPane>
+        <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+            <children>
+                <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+            </children>
+            <padding>
+                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+            </padding>
+        </HBox>
+    </children>
+</VBox>

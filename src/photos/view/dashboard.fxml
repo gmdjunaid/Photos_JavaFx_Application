@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.controller.DashboardController">
+  <children>
+
+    <SplitPane dividerPositions="0.2505567928730512, 0.7494432071269488" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <items>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="Master" textAlignment="CENTER" wrapText="false">
+              <font>
+                <Font size="18.0" fx:id="x1" />
+              </font>
+              <textFill>
+                <Color red="0.624" green="0.624" blue="0.624" fx:id="x2" />
+              </textFill>
+            </Label>
+            <Button fx:id="addAlbumBtn" layoutX="73.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleAddAlbum" prefHeight="25.0" prefWidth="76.0" text="Add Album" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0" />
+            <Button fx:id="deleteAlbumBtn" layoutX="73.0" layoutY="91.0" mnemonicParsing="false" onAction="#handleDeleteAlbum" prefHeight="25.0" prefWidth="76.0" text="Delete" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0" />
+            <Button fx:id="renameAlbumButton" layoutX="73.0" layoutY="126.0" mnemonicParsing="false" onAction="#handleRenameAlbum" prefHeight="25.0" prefWidth="76.0" text="Rename" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="73.0" />
+            <Button fx:id="logOutBtn" layoutX="80.0" layoutY="540.0" mnemonicParsing="false" onAction="#handleLogOut" text="Log Out" />
+            <Label layoutX="66.0" layoutY="378.0" prefHeight="17.0" prefWidth="95.0" text="Search by Date" AnchorPane.leftAnchor="66.0" AnchorPane.rightAnchor="61.0" />
+            <Button fx:id="openButton" layoutX="74.0" layoutY="161.0" mnemonicParsing="false" onAction="#handleOpenButton" prefHeight="25.0" prefWidth="76.0" text="Open" AnchorPane.leftAnchor="74.0" AnchorPane.rightAnchor="72.0" />
+            <Label fx:id="userLabel" layoutX="62.0" layoutY="514.0" text="Logged in as User" />
+            <DatePicker fx:id="toCalendar" layoutX="26.0" layoutY="420.0" prefHeight="25.0" prefWidth="174.0" promptText="To" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="22.0" />
+            <DatePicker fx:id="fromCalendar" layoutX="26.0" layoutY="395.0" prefHeight="25.0" prefWidth="174.0" promptText="From" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="22.0" />
+            <Label layoutX="31.0" layoutY="211.0" text="Search By Tag Type/Value Pair" />
+            <ComboBox fx:id="firstTypeMenu" layoutX="33.0" layoutY="236.0" prefHeight="25.0" prefWidth="76.0" promptText="Type" />
+            <TextField fx:id="firstTagTextField" layoutX="113.0" layoutY="236.0" prefHeight="25.0" prefWidth="80.0" promptText="Tag Value" />
+            <ComboBox fx:id="andOrMenu" layoutX="64.0" layoutY="267.0" prefHeight="25.0" prefWidth="95.0" promptText="AND/OR" />
+            <ComboBox fx:id="secondTypeMenu" layoutX="33.0" layoutY="298.0" prefHeight="25.0" prefWidth="76.0" promptText="Type" />
+            <TextField fx:id="secondTagTextField" layoutX="113.0" layoutY="298.0" prefHeight="25.0" prefWidth="80.0" promptText="Tag Value" />
+                  <Button fx:id="tagSearchBtn" layoutX="83.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleTagSearch" prefHeight="17.0" prefWidth="54.0" text="Search" />
+                  <Button fx:id="dateSearchBtn" layoutX="82.0" layoutY="447.0" mnemonicParsing="false" onAction="#handleDateSearch" prefHeight="17.0" prefWidth="54.0" text="Search" />
+          </children>
+        </AnchorPane>
+        <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+          <content>
+            <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="545.0" prefWidth="430.0">
+              <children>
+                <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Albums" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+                <ListView fx:id="albumView" layoutX="56.0" layoutY="53.0" prefHeight="492.0" prefWidth="443.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-13.0" AnchorPane.topAnchor="53.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </ScrollPane>
+        <AnchorPane>
+          <children>
+            <Label alignment="CENTER" font="$x1" layoutX="14.0" layoutY="14.0" style="&#10;" text="Details" textAlignment="CENTER" textFill="$x2" wrapText="false" />
+            <Label fx:id="dateDetails" layoutX="53.0" layoutY="186.0" prefHeight="220.0" prefWidth="116.0" text="Date Range:" textAlignment="CENTER" wrapText="true">
+              <font>
+                <Font size="21.0" />
+              </font></Label>
+            <Label fx:id="albumSizeDetails" layoutX="64.0" layoutY="438.0" prefHeight="58.0" prefWidth="95.0" text="Album Size:" textAlignment="CENTER" wrapText="true">
+              <font>
+                <Font size="18.0" />
+              </font></Label>
+            <Label fx:id="albumNameDetails" layoutX="43.0" layoutY="76.0" prefHeight="95.0" prefWidth="136.0" text="Album Name:" textAlignment="CENTER" wrapText="true">
+              <font>
+                <Font name="System Bold" size="21.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+      </items>
+    </SplitPane>
+    <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+      <children>
+        <Pane prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+      </children>
+      <padding>
+        <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+      </padding>
+    </HBox>
+  </children>
+</VBox>

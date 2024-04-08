@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="574.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.controller.TagviewController">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <children>
+            <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="574.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Button fx:id="deletePhotoTagBtn" layoutX="171.0" layoutY="234.0" mnemonicParsing="false" onAction="#handleDeletePhotoTag" prefHeight="25.0" prefWidth="64.0" text="Delete" />
+                        <StackPane layoutX="166.0" layoutY="12.0" prefHeight="150.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </StackPane>
+                        <ComboBox fx:id="currentTagsBox" layoutX="171.0" layoutY="203.0" prefHeight="25.0" prefWidth="206.0" promptText="Current Photo Tags" />
+                        <Button fx:id="editPhotoTagBtn" layoutX="313.0" layoutY="234.0" mnemonicParsing="false" onAction="#editPhotoTags" prefHeight="25.0" prefWidth="64.0" text="Edit Tag" />
+                        <Label layoutX="14.0" layoutY="14.0" text="Photo Tags" textFill="#00000097">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <TextArea editable="false" layoutX="3.0" layoutY="168.0" prefHeight="112.0" prefWidth="163.0" text="Edit Tag: Select tag from&#10;drop down then press&#10;Edit Tag.&#10;Delete: Select tag from &#10;drop down and press&#10;Delete." />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Tag Types" textFill="#00000097">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="addTagBtn" layoutX="267.0" layoutY="96.0" mnemonicParsing="false" onAction="#handleAddTagToPhoto" prefHeight="25.0" prefWidth="110.0" text="Add Tag to Photo" />
+                        <ComboBox fx:id="tagTypesBox" layoutX="171.0" layoutY="61.0" prefHeight="25.0" prefWidth="206.0" promptText="Tag Types" />
+                        <TextField fx:id="tagTextField" layoutX="171.0" layoutY="96.0" prefHeight="25.0" prefWidth="91.0" promptText="Enter tag" />
+                        <Button fx:id="deleteTagTypeBtn" layoutX="171.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleDeleteTagType" prefHeight="25.0" prefWidth="104.0" text="Delete Tag Type" />
+                        <Button fx:id="addTagTypeButton" layoutX="280.0" layoutY="129.0" mnemonicParsing="false" onAction="#handleAddNewTagType" prefHeight="25.0" prefWidth="97.0" text="New Tag Type" />
+                        <Button fx:id="doneButton" layoutX="238.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleDone" prefHeight="25.0" prefWidth="72.0" text="Done" />
+                        <TextArea editable="false" layoutX="1.0" layoutY="43.0" prefHeight="235.0" prefWidth="169.0" text="Add Tag to Photo: Select&#10;tag type from drop down&#10;then enter  tag name in&#10;the text field and press&#10;Add Tag to Photos.&#10;Delete Tag Type: Select tag&#10;type in drop down and then&#10;hit delete tag type.&#10;New Tag Type: Enter new&#10; tag type into text field and&#10;press New Tag Type. Then, &#10;select the tag types&#10;multiplicity." />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+    </AnchorPane>
+  </children>
+</VBox>
