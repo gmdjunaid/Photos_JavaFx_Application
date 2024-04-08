@@ -1,8 +1,9 @@
-# photos JavaFX Application
-Project made By Junaid Ghani and Rayaan Afzal
+# photos
+Project made By Rayaan Afzal and Junaid Ghani
 
 A photos app created using JavaFX Library for CS213
 
+This app was written with JavaFX Version 21 <br> <br>
 Running the Application (IntelliJ)
 Go to Settings -> Path Variables <br>
 Then click the + icon to add a variable <br>
@@ -33,7 +34,7 @@ Albums
 Photos
 - Photos can only be in albums
 - Photo Dates (utilize java.util.Calendar)
-- Location of photos (i.e. user should be able to define where these locations are and they should persist throughout the application locally)
+- Location of photos (i.e. user should be able to define where these locations are and they should persist throughout the application locally)(NEED)
 - Add photos
 - Remove photos
 - Caption/recaption a photo
