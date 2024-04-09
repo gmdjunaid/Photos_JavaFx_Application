@@ -186,7 +186,7 @@ public class TagviewController {
             Optional<String> result = dialog.showAndWait();
 
             if (result.isPresent()) {
-                DataSave.TagTypeConstraint constraint = "Multiple".equals(result.get()) ? DataSave.TagTypeConstraint.MULTIPLE : DataSave.TagTypeConstraint.SINGLE;
+                DataSave.TagTypeConstraint constraint = "Multiple".equalsIgnoreCase(result.get()) ? DataSave.TagTypeConstraint.MULTIPLE : DataSave.TagTypeConstraint.SINGLE;
                 DataSave.addTagType(newType, constraint);
                 loadTagTypes();
             }
